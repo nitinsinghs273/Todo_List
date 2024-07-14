@@ -2,10 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { EditTask } from "../TodoSlice/TodoSlice";
 
-function EditForm({ task, toDo }) {
+function EditForm({ task }) {
   const [values, setValues] = useState(task.task);
   const inputEl = useRef(null);
   const dispatch = useDispatch();
+
+  // Focus the input field on mount.
   useEffect(function () {
     inputEl.current.focus();
   });

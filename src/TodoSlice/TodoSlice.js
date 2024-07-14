@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import {
   getLocalStorage,
   setLocalStorage,
-} from "./../hook/localStorageUtils.js"; // Adjust the import path as needed
+} from "./../hook/localStorageUtils.js";
 
 const LOCAL_STORAGE_KEY = "todos";
 

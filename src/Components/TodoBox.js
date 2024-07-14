@@ -2,20 +2,14 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
-import {
-  AddTasks,
-  EditTask,
-  EditToDo,
-  HandleDelete,
-  HandleComplete,
-} from "../TodoSlice/TodoSlice";
+import { EditToDo, HandleDelete, HandleComplete } from "../TodoSlice/TodoSlice";
 
-function TodoBox({ task, toDo }) {
+function TodoBox({ task }) {
   const dispatch = useDispatch();
+
   function handleEdit(id) {
     dispatch(EditToDo({ task, id }));
   }
-
   function handleComplete(id) {
     console.log(id);
     dispatch(HandleComplete({ id }));

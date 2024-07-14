@@ -5,11 +5,12 @@ import { v4 as uuidv4 } from "uuid";
 
 uuidv4();
 
-function TodoForm({ toDo }) {
+function TodoForm() {
   const [task, setTask] = useState("");
   const inputEl = useRef(null);
   const dispatch = useDispatch();
 
+  // Focus on input field when component mounts
   useEffect(function () {
     inputEl.current.focus();
   }, []);
@@ -24,7 +25,6 @@ function TodoForm({ toDo }) {
       isEditing: false,
     };
     dispatch(AddTasks(newTodo));
-
     setTask("");
   }
 

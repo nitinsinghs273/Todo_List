@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-
 import TodoReducer from "./TodoSlice/TodoSlice";
 
 const store = configureStore({
@@ -7,6 +6,5 @@ const store = configureStore({
     todos: TodoReducer,
   },
 });
-
 
 export default store;
