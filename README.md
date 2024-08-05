@@ -36,16 +36,17 @@ To run this project locally, follow these steps:
 2. **Navigate to the Project Directory**
 
 ```bash
-cd todo-app
-
-
+cd Todo_List
+```
 Install Dependencies
+
 
 3. **Ensure you are in the root directory of the project, then run:**
 
 
 ```bash
 npm install
+```
 
 This command will install all the required dependencies listed in package.json.
 
@@ -53,6 +54,7 @@ This command will install all the required dependencies listed in package.json.
 
 ```bash
 npm start
+```
 
 This will start the development server. Open your browser and navigate to http://localhost:3000 to view the app.
 
