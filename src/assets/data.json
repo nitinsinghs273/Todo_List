@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "task": "Buy groceries",
+    "isComplete": false,
+    "isEditing": false,
+    "updatedAt": "2024-08-01T12:00:00Z",
+    "description": "Milk, bread, and eggs",
+    "timestamp": "2024-08-01 12:00 PM"
+  },
+  {
+    "id": "2",
+    "task": "Complete React project",
+    "isComplete": true,
+    "isEditing": false,
+    "updatedAt": "2024-08-02T09:30:00Z",
+    "description": "Finish the front-end development for the Todo app",
+    "timestamp": "2024-08-02 09:30 AM"
+  },
+  {
+    "id": "3",
+    "task": "Call mom",
+    "isComplete": false,
+    "isEditing": false,
+    "updatedAt": "2024-08-03T15:45:00Z",
+    "description": "Check in and see how she's doing",
+    "timestamp": "2024-08-03 03:45 PM"
+  },
+  {
+    "id": "4",
+    "task": "Prepare presentation",
+    "isComplete": false,
+    "isEditing": false,
+    "updatedAt": "2024-08-04T10:00:00Z",
+    "description": "Create slides for the upcoming conference",
+    "timestamp": "2024-08-04 10:00 AM"
+  }
+]

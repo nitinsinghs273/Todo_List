@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,7 +6,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   width: 100%;
   height: 100%;
 }
@@ -14,29 +14,45 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* Reset margins and paddings for all elements */
 * {
   margin: 0;
   padding: 0;
 }
 
+/* App container styling */
 .App {
   display: flex;
   justify-content: center;
   background-color: #282c34;
   min-height: 100vh;
 }
+
+/* Main container styling */
 .Container {
   max-width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+  position: relative;
 }
+
+/* Header styling within Container */
 .Container h1 {
   color: white;
   font-size: 40px;
 }
 
+/* Search bar styling */
+.search {
+  position: absolute;
+  right: 50px;
+  top: 50px;
+}
+
+/* Form styling for adding todos */
 .todo-form {
   display: flex;
   justify-content: center;
@@ -44,9 +60,10 @@ code {
   margin-top: 30px;
 }
 
+/* Styling for todo input fields */
 .todo-input {
   width: 400px;
-  height: 40px;
+  height: 50px;
   border-radius: 2px;
   border: 3px solid rgb(110, 2, 169);
   padding: 4px 8px;
@@ -54,32 +71,53 @@ code {
   outline: none;
   background-color: #282c34;
 }
+
+/* Button styling for adding todos */
 .todo-btn {
   background-color: rgb(110, 2, 169);
   color: white;
-  height: 53px;
+  height: 62px;
   padding: 15px 15px;
   outline: none;
   border: none;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
   cursor: pointer;
 }
+
+/* Form styling within Container */
 .Container form {
   width: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+/* Box styling for individual todo items */
 .box {
-  background-color: rgb(110, 2, 169);
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: 45px;
+  border-radius: 3px;
+  font-size: 18px;
+  width: 96%;
+  padding: 5px 10px;
+  text-wrap: wrap;
+  white-space-collapse: collapse;
+  white-space: normal;
+  cursor: pointer;
+}
+
+/* Container for todos */
+.container-todo {
+  background-color: rgb(110, 2, 169);
+  color: white;
   border-radius: 3px;
   font-size: 18px;
   width: 96%;
@@ -90,25 +128,36 @@ code {
   white-space: normal;
   cursor: pointer;
 }
-.box .descrip {
-  width: 75%;
+
+/* Expanded details section styling */
+.expanded-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 10px;
 }
-.box .descrip .dis_task {
-  overflow: hidden;
-}
+
 .icons {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  cursor: pointer;
+  gap: 10px;
+  padding: 10px;
 }
 
+/* Description styling within box */
+.box .descrip {
+  width: 75%;
+}
+
+/* Task styling when completed */
 .complete {
   text-decoration: line-through;
   color: gray;
 }
 
+/* Edit form styling */
 .edit_form {
   display: flex;
   justify-content: center;
@@ -117,9 +166,10 @@ code {
   margin-top: 30px;
 }
 
+/* Styling for edit input fields */
 .edit-input {
   width: 400px;
-  height: 40px;
+  height: 53px;
   border-radius: 2px;
   border: 3px solid rgb(110, 2, 169);
   padding: 4px 8px;
@@ -127,18 +177,73 @@ code {
   outline: none;
   background-color: #282c34;
 }
+
+/* Button styling for updating todos */
 .edit-btn {
   background-color: rgb(110, 2, 169);
   color: white;
-  height: 53px;
+  height: 65px;
   padding: 15px 15px;
   outline: none;
   border: none;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
   cursor: pointer;
+}
+
+/* Message styling */
+.message {
+  margin-top: 50px;
+  font-size: xx-large;
+  color: white;
+}
+
+/* Basic styles for the search bar */
+.search-bar {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  width: 200px;
+  border-radius: 4px;
+  background-color: #282c34; /* Match the background color of the app */
+}
+
+/* Hide the input on smaller screens and show the search icon */
+@media (max-width: 768px) {
+  .todo-input {
+    display: none;
+  }
+
+  .search-icon {
+    display: inline-block;
+    cursor: pointer;
+  }
+}
+
+/* Default search icon is hidden on larger screens */
+.search-icon {
+  display: none;
+  font-size: 24px;
+  margin-left: 10px;
+}
+
+/* Show the search bar on smaller screens when the icon is clicked */
+@media (max-width: 768px) {
+  .search-bar.active .todo-input {
+    display: inline-block;
+  }
+
+  .search-bar.active .search-icon {
+    display: none;
+  }
 }
 
 /* Media Queries for Responsive Design */
@@ -221,5 +326,6 @@ code {
     width: 100%;
     margin-top: 10px;
     transition: all 0.5s ease;
+    padding: 10px;
   }
 }
